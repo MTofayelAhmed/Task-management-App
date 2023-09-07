@@ -18,7 +18,7 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
-        console.log("user Created", createdUser);
+        console.log("user Created from signUp", createdUser);
         updateUserData(createdUser, name, photo)
           .then(() => {})
           .catch((err) => {
@@ -48,6 +48,7 @@ const SignUp = () => {
                   type="text"
                   placeholder="Name"
                   name="name"
+                  required
                   className="input input-bordered"
                 />
               </div>
@@ -59,6 +60,7 @@ const SignUp = () => {
                   type="text"
                   placeholder="email"
                   name="email"
+                  required
                   className="input input-bordered"
                 />
               </div>
@@ -70,6 +72,7 @@ const SignUp = () => {
                   type="text"
                   placeholder="password"
                   name="password"
+                  required
                   className="input input-bordered"
                 />
               </div>
@@ -81,6 +84,7 @@ const SignUp = () => {
                   type="text"
                   placeholder="Picture"
                   name="photo"
+                  required
                   className="input input-bordered"
                 />
               </div>
