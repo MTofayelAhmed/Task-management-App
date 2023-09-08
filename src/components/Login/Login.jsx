@@ -70,6 +70,9 @@ console.log("email and password in login", email, password)
               <div className="form-control mt-6">
                 <input className="btn   mt-6" type="submit" value="Login" />
               </div>
+              <p className="mt-1 text-center ">
+                <span className=" text-red-600 font-medium">{error}</span>
+              </p>
             </form>
             <p className="text-center py-4 text-orange-400">
               New Here ? <Link to="/register"> please Register</Link>

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [error, setError] = useState("");
@@ -32,14 +32,14 @@ const SignUp = () => {
     navigate("/login");
   };
   return (
-    <form onSubmit={handleRegister}>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col w-full ">
-          <div className="text-center lg:text-left my-10">
-            <h1 className="text-5xl font-bold">Register Now</h1>
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
-            <div className="card-body">
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col w-full ">
+        <div className="text-center lg:text-left my-10">
+          <h1 className="text-5xl font-bold">Register Now</h1>
+        </div>
+        <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
+          <div className="card-body">
+            <form onSubmit={handleRegister}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -104,11 +104,14 @@ const SignUp = () => {
               <p className="mt-1 text-center ">
                 <span className=" text-red-600 font-medium">{error}</span>
               </p>
-            </div>
+            </form>
+            <p className="text-center py-4 text-orange-400">
+              Already Register ? <Link to="/login"> please Login</Link>
+            </p>
           </div>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 

@@ -19,8 +19,14 @@ const Navbar = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
+            <li>
+              <Link to="/taskForm">TaskForm</Link>
+            </li>
             <li onClick={handleLogout}>
               <Link>Logout</Link>
+            </li>
+            <li>
+              <Link>{user?.displayName}</Link>
             </li>
             <li>
               <div className="w-10 rounded-full">
